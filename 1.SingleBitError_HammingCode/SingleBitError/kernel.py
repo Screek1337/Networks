@@ -19,7 +19,7 @@ class Kernel(GUI):
         self.clear_btns()
         self.split_source()
 
-    def split_source(self, *args):
+    def split_source(self):
         self.original_checksum.set("")
         self.wrong_checksum.set("")
         checksum = ""

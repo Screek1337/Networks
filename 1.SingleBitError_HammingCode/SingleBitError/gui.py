@@ -16,6 +16,8 @@ class GUI(tk.Frame):
         self.parity_btns = []
 
         self.source = tk.StringVar()
+        self.original_checksum = tk.StringVar()
+        self.wrong_checksum = tk.StringVar()
 
         self.create_widgets()
 
@@ -27,10 +29,13 @@ class GUI(tk.Frame):
                                      textvariable=self.source)
 
         self.check_sum_label = tk.Label(master=self.master, text="Checksum")
-        self.check_sum_field = tk.Entry(master=self.master, width=2)
+        self.check_sum_field = tk.Entry(master=self.master,
+                                        width=2,
+                                        textvariable=self.wrong_checksum)
         self.original_check_sum_label = tk.Label(master=self.master,
                                                  text="Original checksum")
-        self.original_check_sum_field = tk.Entry(master=self.master, width=2)
+        self.original_check_sum_field = tk.Entry(
+            master=self.master, width=2, textvariable=self.original_checksum)
 
         self.top_label.grid(row=0, column=0, columnspan=10, sticky="W")
         self.source_field.grid(row=1, column=0, columnspan=10, sticky="W")
